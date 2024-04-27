@@ -302,24 +302,24 @@ class JuriLombaController extends Controller
                         $nilai_count++;
                     }
                 }
-                if ($nilai4[$i] != null) {
-                    $peserta->nilai4 = $nilai4[$i];
-                    if ($peserta->nilai4 != null) {
-                        $nilai_count++;
-                    }
-                }
-                if ($nilai5[$i] != null) {
-                    $peserta->nilai5 = $nilai5[$i];
-                    if ($peserta->nilai5 != null) {
-                        $nilai_count++;
-                    }
-                }
-                if ($nilai6[$i] != null) {
-                    $peserta->nilai6 = $nilai6[$i];
-                    if ($peserta->nilai6 != null) {
-                        $nilai_count++;
-                    }
-                }
+                // if ($nilai4[$i] != null) {
+                //     $peserta->nilai4 = $nilai4[$i];
+                //     if ($peserta->nilai4 != null) {
+                //         $nilai_count++;
+                //     }
+                // }
+                // if ($nilai5[$i] != null) {
+                //     $peserta->nilai5 = $nilai5[$i];
+                //     if ($peserta->nilai5 != null) {
+                //         $nilai_count++;
+                //     }
+                // }
+                // if ($nilai6[$i] != null) {
+                //     $peserta->nilai6 = $nilai6[$i];
+                //     if ($peserta->nilai6 != null) {
+                //         $nilai_count++;
+                //     }
+                // }
 
                 if ($nilai_count == null || $nilai_count == 0) {
                     $nilai_count = 1;
