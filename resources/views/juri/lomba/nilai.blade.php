@@ -64,8 +64,8 @@
 
                     @if($peserta->song1 != null)
                     <tr>
-                        <!-- <th  width="10%" scope="row">{{$peserta->no_undian}}</th> -->
-                        <th  width="10%" scope="row">{{$no++}}</th>
+                        <th  width="10%" scope="row">{{$peserta->no_undian}}</th>
+                        <!-- <th  width="10%" scope="row">{{$no++}}</th> -->
                         <td width="60%">
                           <!-- <br>
                           <b>Lagu :</b> -->
@@ -112,8 +112,8 @@
 
                     @if($peserta->song2 != null)
                     <tr>
-                        <!-- <th scope="row">{{$peserta->no_undian}}</th> -->
-                        <th scope="row">{{$no++}}</th>
+                        <th  width="10%" scope="row">{{$peserta->no_undian}}</th>
+                        <!-- <th  width="10%" scope="row">{{$no++}}</th> -->
                         <td>
                                 {{-- <input class="form-control" name="id[]" type="hidden" value="{{$peserta->id}} "> --}}
                                 <input class="form-control" name="kategori_id" type="hidden" value="{{$lomba->kategori_id}} ">
@@ -159,8 +159,8 @@
 
                     @if($peserta->song3 != null)
                     <tr>
-                        <!-- <th scope="row">{{$peserta->no_undian}}</th> -->
-                        <th scope="row">{{$no++}}</th>
+                        <th  width="10%" scope="row">{{$peserta->no_undian}}</th>
+                        <!-- <th  width="10%" scope="row">{{$no++}}</th> -->
                         <td>
                                 {{-- <input class="form-control" name="id[]" type="hidden" value="{{$peserta->id}} "> --}}
                                 <input class="form-control" name="kategori_id" type="hidden" value="{{$lomba->kategori_id}} ">
@@ -206,8 +206,8 @@
 
                     @if($peserta->song4 != null)
                     <tr>
-                        <!-- <th scope="row">{{$peserta->no_undian}}</th> -->
-                        <th scope="row">{{$no++}}</th>
+                        <th  width="10%" scope="row">{{$peserta->no_undian}}</th>
+                        <!-- <th  width="10%" scope="row">{{$no++}}</th> -->
                         <td>
                                 {{-- <input class="form-control" name="id[]" type="hidden" value="{{$peserta->id}} "> --}}
                                 <input class="form-control" name="kategori_id" type="hidden" value="{{$lomba->kategori_id}} ">
@@ -253,8 +253,8 @@
 
                     @if($peserta->song5 != null)
                     <tr>
-                        <!-- <th scope="row">{{$peserta->no_undian}}</th> -->
-                        <th scope="row">{{$no++}}</th>
+                        <th  width="10%" scope="row">{{$peserta->no_undian}}</th>
+                        <!-- <th  width="10%" scope="row">{{$no++}}</th> -->
                         <td>
                                 {{-- <input class="form-control" name="id[]" type="hidden" value="{{$peserta->id}} "> --}}
                                 <input class="form-control" name="kategori_id" type="hidden" value="{{$lomba->kategori_id}} ">
