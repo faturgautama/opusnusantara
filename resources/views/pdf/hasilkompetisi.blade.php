@@ -73,7 +73,7 @@ $jumlah_peserta = sizeof($pesertas);
             @if($peserta->juara_final == 5) Harapan II @endif
             @if($peserta->juara_final == 6) Harapan III @endif
           @endif
-          @if($lomba->tipe_lomba=='final')
+          @if($lomba->tipe_lomba=='final' || $lomba->tipe_lomba=='')
             @if($peserta->juara == 1) Juara I @endif
             @if($peserta->juara == 2) Juara II @endif
             @if($peserta->juara == 3) Juara III @endif
@@ -83,7 +83,7 @@ $jumlah_peserta = sizeof($pesertas);
           @endif
         @endif
         @if($bahasa== 'inggris')
-          @if($lomba->tipe_lomba=='final')
+          @if($lomba->tipe_lomba=='final' || $lomba->tipe_lomba=='')
             @if($peserta->juara == 1) First Winner @endif
             @if($peserta->juara == 2) Second Winner @endif
             @if($peserta->juara == 3) Third Winner @endif

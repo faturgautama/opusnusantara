@@ -22,7 +22,7 @@
         <div class="card-header">
             <select name="ordering" id="ordering" class="btn btn-outline-primary">
                 <option value="rata2" @if($order_by  == 'rata2') selected @endif>Rata-rata</option>
-                <option value="undian" @if($order_by  == 'undian') selected @endif>Nomor</option>
+                <option value="no_undian" @if($order_by  == 'no_undian') selected @endif>Nomor</option>
             </select>
         </div>
 
@@ -43,9 +43,9 @@
                         $isSong3 = true;
                     }
                     
-                    if($order_by == 'undian'){
-                        // $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)->orderByRaw('CAST(no_undian AS UNSIGNED) ASC')->get();
-                        $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)->orderByRaw('id ASC')->get();
+                    if($order_by == 'no_undian'){
+                        $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)->orderByRaw('CAST(no_undian AS UNSIGNED) ASC')->get();
+                        // $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)->orderByRaw('id ASC')->get();
                     }
                     // echo $pesertas;
                     $i=0;
