@@ -224,6 +224,45 @@ class OrganizerLombaDownload extends Controller
     }
 
     public function penilaian_proses(Request $request, $id){
+        $pesertas = \App\LombakuPeserta::where('kategori_id', $request->kategori_id)->get();
+        // dd($pesertas);
+        for ($i = 0; $i < sizeof($pesertas); $i++) {
+            $peserta = \App\LombakuPeserta::find($pesertas[$i]->id);
+            // echo 'tes';
+            // echo $peserta->nilai2;
+            // dd($peserta);
+            $nilai_count = 0;
+            
+            if ($peserta->nilai1 != null) {
+                $nilai_count++;
+            }
+            if ($peserta->nilai2 != null) {
+                $nilai_count++;
+            }
+            if ($peserta->nilai3 != null) {
+                $nilai_count++;
+            }
+            if ($peserta->nilai4 != null) {
+                $nilai_count++;
+            }
+            if ($peserta->nilai5 != null) {
+                $nilai_count++;
+            }
+            if ($peserta->nilai6 != null) {
+                $nilai_count++;
+            }
+
+            if ($nilai_count == null || $nilai_count == 0) {
+                $nilai_count = 1;
+            }
+            // dd($request);
+
+            $rata2 = ($peserta->nilai1 + $peserta->nilai2 + $peserta->nilai3 + $peserta->nilai4 + $peserta->nilai5 + $peserta->nilai6) / $nilai_count;
+            $peserta->ratarata = $rata2;
+            // $peserta->juara =$juara[$i];
+            $peserta->save();
+        }
+
         // echo $id;
         $data['lomba'] = \App\Lomba::find($id);
         // echo $data['lomba'];
