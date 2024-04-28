@@ -31,7 +31,7 @@
                 {{csrf_field()}}
                 <table class="table">
                     <?php
-                    $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)->orderByRaw('CAST(ratarata AS UNSIGNED) DESC')->get();
+                    $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)->orderByRaw('CAST(ratarata AS DECIMAL(5,2)) DESC')->get();
                     // echo $pesertas;
                     $isSong2 = false;
                     $isSong3 = false;
