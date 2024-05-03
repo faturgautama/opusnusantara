@@ -446,6 +446,7 @@ class OrganizerLombaDownload extends Controller
       $data['lomba'] = \App\LombakuPeserta::find($id);
       $data['kategori'] = \App\LombaKategori::find($request->kategori_id);
       $data['bahasa'] = $request->bahasa;
+      $data['order_by'] = $request->order_by;
       if($request->kategori_id == 'all'){
           $kategoris = \App\LombaKategori::where('lomba_id', $id)->get();
           // dd($kategoris);
@@ -456,7 +457,9 @@ class OrganizerLombaDownload extends Controller
 
           if($request->output == 'xlsx'){
             // dd($kategoris);
-            return \Excel::download(new \App\Exports\hasilKompetisiAll_xls (compact('kategoris')), 'Hasil Kompetisi All.xlsx');
+            $data['kategoris']=$kategoris;
+            return \Excel::download(new \App\Exports\hasilKompetisiAll_xls ($data), 'Hasil Kompetisi All.xlsx');
+            // return \Excel::download(new \App\Exports\hasilKompetisiAll_xls (compact('kategoris')), 'Hasil Kompetisi All.xlsx');
           }
           if($request->output == 'html'){
             return view('pdf.hasilkompetisi_all')->with('kategoris', $kategoris);

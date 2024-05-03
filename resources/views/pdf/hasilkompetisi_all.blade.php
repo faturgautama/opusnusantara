@@ -10,14 +10,19 @@ table, th, td {
 
 
   <?php
+  if($order_by=='ratarata'){
+    $order_by='CAST(ratarata as DECIMAL(5,2)) DESC';
+  } else {
+    $order_by ='CAST(no_undian as UNSIGNED) ASC';
+  }
   $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)
-      ->orderBy('juara', 'asc')
+      ->orderByRaw($order_by)
       ->get();
   // song_type_final
   if ($kategori->song_type_final) {
       $pesertas = \App\LombakuPeserta::where('kategori_id', $kategori->id)
           ->where('juara', 1)
-          ->orderBy('juara_final', 'asc')
+          ->orderByRaw($order_by)
           ->get();
   }
   $jumlah_peserta = sizeof($pesertas);
@@ -39,8 +44,8 @@ table, th, td {
 
     @foreach($pesertas as $peserta)
     <tr>
-      <!-- <td width="80px">{{$peserta->no_undian}}</td> -->
-      <td width="80px">{{$no++}}</td>
+      <td width="80px">{{$peserta->no_undian}}</td>
+      <!-- <td width="80px">{{$no++}}</td> -->
       <td width="200px">{{$peserta->nama}}</td>
       <?php $kategori = \App\LombaKategori::find($peserta->kategori_id); ?>
       <td width="150px">Kategori {{$kategori->name}} Kelas {{$kategori->min}} - {{$kategori->max}}</td>

@@ -54,6 +54,12 @@
                         <option value="indonesia">Indonesia</option>
                         <option value="inggris">English</option>
                 </select>
+                <br>
+                <label for="bahasa">Order By</label>
+                 <select class="form-control" id="order_by" name="order_by" required>
+                        <option value="ratarata">Rata-rata</option>
+                        <option value="no_undian">Nomor</option>
+                </select>
 
 
             </div>
